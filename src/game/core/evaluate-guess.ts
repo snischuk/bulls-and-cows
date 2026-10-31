@@ -1,16 +1,30 @@
-type GuessResult = {
-  bullsCount: number;
-  cowsCount: number;
-};
+import type { GuessFeedback } from '../game.type';
 
-type EvaluateGuess = (secret: string, guess: string) => GuessResult;
+type EvaluateGuess = (secret: string, guess: string) => GuessFeedback;
 
 export const evaluateGuess: EvaluateGuess = (
   secret: string,
   guess: string,
-): GuessResult => {
-  void secret;
-  void guess;
+): GuessFeedback => {
+  const secretDigits: string[] = [...secret.toLowerCase()];
 
-  throw new Error('Not implemented');
+  const guessDigits: string[] = [...guess.toLowerCase()];
+
+  const secretDigitSet: Set<string> = new Set(secretDigits);
+
+  const bullsCount: number = guessDigits.filter(
+    (digit: string, digitIndex: number): boolean =>
+      digit === secretDigits[digitIndex],
+  ).length;
+
+  const matchingDigitsCount: number = guessDigits.filter(
+    (digit: string): boolean => secretDigitSet.has(digit),
+  ).length;
+
+  const cowsCount: number = matchingDigitsCount - bullsCount;
+
+  return {
+    bullsCount,
+    cowsCount,
+  };
 };
