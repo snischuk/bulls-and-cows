@@ -1,14 +1,20 @@
 import type { GuessAttempt } from '../../../game/game.type';
+import { DEFAULT_LANGUAGE, type Language } from '../../config/interface.config';
+import { type Translate, createTranslator } from '../../i18n/translator';
 import { createList } from '../ui-kit/list';
 import { createListItem } from '../ui-kit/list-item';
 
-type AttemptsHistoryOptions = Readonly<Partial<HTMLOListElement>>;
+interface AttemptsHistoryOptions extends Readonly<Partial<HTMLOListElement>> {
+  readonly language?: Language;
+}
 
 type RenderAttempts = (attemptsHistory: readonly GuessAttempt[]) => void;
+
 interface AttemptsHistory {
   readonly element: HTMLOListElement;
   readonly render: RenderAttempts;
 }
+
 type CreateAttemptsHistory = (
   options?: AttemptsHistoryOptions,
 ) => AttemptsHistory;
@@ -16,9 +22,13 @@ type CreateAttemptsHistory = (
 export const createAttemptsHistory: CreateAttemptsHistory = (
   options: AttemptsHistoryOptions = {},
 ): AttemptsHistory => {
+  const { language = DEFAULT_LANGUAGE, ...properties } = options;
+
+  const t: Translate = createTranslator(language);
+
   const element: HTMLOListElement = createList({
     className: 'attempts-list',
-    ...options,
+    ...properties,
   });
 
   const render: RenderAttempts = (
@@ -28,10 +38,16 @@ export const createAttemptsHistory: CreateAttemptsHistory = (
       (attempt: GuessAttempt): HTMLLIElement =>
         createListItem({
           className: 'attempt-item',
-          text: `${attempt.guessSequence} — ${attempt.bullsCount} быков, ${attempt.cowsCount} коров`,
+          text: t('attempt', {
+            guess: attempt.guessSequence,
+            bulls: attempt.bullsCount,
+            cows: attempt.cowsCount,
+          }),
         }),
     );
+
     element.replaceChildren(...attemptElements);
   };
+
   return { element, render };
 };
