@@ -16,7 +16,7 @@
   font-size: clamp(2rem, 4vw, 2.9rem);
   font-weight: 700;
   line-height: 1.13;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.03em;
 }
 
 .settings-description {
@@ -30,7 +30,7 @@
 .status-message {
   margin-top: 24px;
   padding: 14px 16px;
-  border-left: 3px solid var(--primary);
+  border: 1px solid var(--border);
   background: var(--status-background);
   color: var(--status-text);
   font-size: 0.9rem;

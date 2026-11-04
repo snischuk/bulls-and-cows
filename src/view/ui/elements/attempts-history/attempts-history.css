@@ -4,7 +4,8 @@
 }
 
 .attempt-item {
-  padding: 14px 0 14px 8px;
+  padding: 10px 0 10px 8px;
+  display: list-item;
   border-top: 1px solid var(--border);
   color: var(--item-text);
 }
@@ -16,7 +17,9 @@
 }
 
 .attempt-sequence {
-  display: block;
+  display: inline-block;
+  min-width: 8ch;
+  margin-inline-end: 16px;
   font-family: var(--font-digits);
   font-size: 1.3rem;
   font-weight: 600;
@@ -24,11 +27,11 @@
 }
 
 .attempt-feedback {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 12px;
   margin-top: 8px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
 }
 
 .feedback-bulls,
