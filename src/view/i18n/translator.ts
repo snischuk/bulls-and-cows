@@ -3,6 +3,13 @@ import { LANGUAGE } from '@/view/config/interface.config';
 
 interface Messages {
   readonly title: string;
+  readonly settingsTitle: string;
+  readonly roundTitle: string;
+  readonly availableDigits: string;
+  readonly bullsLabel: string;
+  readonly cowsLabel: string;
+  readonly recordSettings: string;
+  readonly recordResult: string;
   readonly introduction: string;
   readonly numberSystem: string;
   readonly base: string;
@@ -40,8 +47,15 @@ export type MessageKey = keyof Messages;
 
 const english: Messages = {
   title: 'Bulls and Cows',
+  settingsTitle: 'Set up the board',
+  roundTitle: 'Find the secret',
+  availableDigits: 'Digits in play',
+  bullsLabel: 'Bulls',
+  cowsLabel: 'Cows',
+  recordSettings: '{base}, {length} digits',
+  recordResult: '{attempts} guesses in {time} s',
   introduction:
-    'Choose your settings and guess the secret with unique digits. Bulls are correct digits in the correct position; cows are correct digits in the wrong position.',
+    'A secret with no repeated digits. Each guess brings you closer: bulls are in the right place, cows belong somewhere else.',
   numberSystem: 'Number system',
   base: 'base',
   secretLength: 'Secret length',
@@ -82,8 +96,15 @@ const english: Messages = {
 
 const russian: Messages = {
   title: 'Быки и коровы',
+  settingsTitle: 'Настройте игру',
+  roundTitle: 'Угадайте секрет',
+  availableDigits: 'Цифры в игре',
+  bullsLabel: 'Быки',
+  cowsLabel: 'Коровы',
+  recordSettings: '{base}, длина: {length}',
+  recordResult: 'Попыток: {attempts}, время: {time} с',
   introduction:
-    'Выберите настройки и угадайте секрет из уникальных цифр. Быки — цифры на своих местах, коровы — на других.',
+    'В секрете нет повторяющихся цифр. Каждая попытка приближает к разгадке: быки стоят на своих местах, коровы — на других.',
   numberSystem: 'Система счисления',
   base: 'основание',
   secretLength: 'Длина секрета',

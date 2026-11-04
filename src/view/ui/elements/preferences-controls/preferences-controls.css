@@ -3,8 +3,49 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  gap: 8px 12px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.game-brand {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.04em;
+}
+
+.game-mark {
+  display: grid;
+  grid-template-columns: repeat(2, 8px);
+  gap: 4px;
+}
+
+.game-mark span {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+}
+
+.game-mark span:nth-child(-n + 2) {
+  background: var(--primary);
+}
+
+.preferences-controls label {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.preferences-controls .ui-select {
+  min-height: 36px;
+  padding: 6px 8px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 0.8rem;
 }
 
 .preferences-status {
@@ -12,7 +53,13 @@
   text-align: right;
 }
 
-.preferences-controls .ui-select {
-  padding: 8px 12px;
-  border-radius: 8px;
+@media (max-width: 600px) {
+  .game-brand {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+
+  .preferences-controls {
+    padding: 18px 0;
+  }
 }

@@ -12,6 +12,8 @@ import { createSelect } from '@/view/ui/ui-kit/select/select';
 
 import './preferences-controls.css';
 
+const BRAND_PEG_COUNT: number = 4;
+
 interface Preferences {
   readonly language: Language;
   readonly theme: Theme;
@@ -38,6 +40,23 @@ export const createPreferencesControls: CreatePreferencesControls = (
 
   const element: HTMLElement = document.createElement('header');
   Object.assign(element, { className: 'preferences-controls' }, options);
+
+  const brand: HTMLDivElement = document.createElement('div');
+  brand.className = 'game-brand';
+
+  const mark: HTMLSpanElement = document.createElement('span');
+  mark.className = 'game-mark';
+  mark.setAttribute('aria-hidden', 'true');
+  mark.append(
+    ...Array.from({ length: BRAND_PEG_COUNT }, (): HTMLSpanElement =>
+      document.createElement('span'),
+    ),
+  );
+
+  const brandName: HTMLSpanElement = document.createElement('span');
+  brandName.textContent = t('title');
+
+  brand.append(mark, brandName);
 
   const languageLabel: HTMLLabelElement = document.createElement('label');
   languageLabel.textContent = t('language');
@@ -71,7 +90,7 @@ export const createPreferencesControls: CreatePreferencesControls = (
 
   themeLabel.htmlFor = themeSelect.id;
 
-  element.append(languageLabel, languageSelect, themeLabel, themeSelect);
+  element.append(brand, languageLabel, languageSelect, themeLabel, themeSelect);
 
   return { element, languageSelect, themeSelect };
 };

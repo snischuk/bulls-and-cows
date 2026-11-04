@@ -1,14 +1,16 @@
 .ui-text-input {
   min-width: 0;
+  min-height: 46px;
   padding: 12px 14px;
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: var(--radius);
   background: var(--field-background);
   color: var(--text);
   font: inherit;
 }
 
 .ui-text-input:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
+  border-color: var(--primary);
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
 }

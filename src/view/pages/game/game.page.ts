@@ -46,7 +46,7 @@ export const createGamePage: CreateGamePage = (
   card.className = 'game-card';
 
   const title: HTMLHeadingElement = document.createElement('h1');
-  title.textContent = t('title');
+  title.textContent = t('roundTitle');
 
   const description: HTMLParagraphElement = document.createElement('p');
   description.className = 'settings-description';

@@ -10,6 +10,7 @@ import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
 import '@/view/styles/page.css';
+import { createSecretPreview } from '@/view/ui/elements/secret-preview/secret-preview';
 import { createButton } from '@/view/ui/ui-kit/button/button';
 import { createOption } from '@/view/ui/ui-kit/option/option';
 import { createSelect } from '@/view/ui/ui-kit/select/select';
@@ -51,7 +52,7 @@ export const createSettingsPage: CreateSettingsPage = (
   card.className = 'game-card';
 
   const title: HTMLHeadingElement = document.createElement('h1');
-  title.textContent = t('title');
+  title.textContent = t('settingsTitle');
 
   const description: HTMLParagraphElement = document.createElement('p');
   description.className = 'settings-description';
@@ -129,6 +130,11 @@ export const createSettingsPage: CreateSettingsPage = (
     return { numberBase, secretLength: Number(lengthSelect.value) };
   };
 
+  const preview: ReturnType<typeof createSecretPreview> = createSecretPreview(
+    readSettings(),
+    { language },
+  );
+
   const updateSettings: UpdateSettings = (): void => {
     const base: number = Number(baseSelect.value);
 
@@ -143,6 +149,8 @@ export const createSettingsPage: CreateSettingsPage = (
 
     hint.textContent =
       base === NUMBER_BASE.BINARY ? t('binaryHint') : t('digitsHint');
+
+    preview.render(currentSettings);
 
     const count: number = countPossibleSecrets(
       currentSettings.secretLength,
@@ -170,7 +178,7 @@ export const createSettingsPage: CreateSettingsPage = (
     startButton,
   );
 
-  card.append(title, description, form);
+  card.append(title, description, preview.element, form);
 
   element.append(card);
 

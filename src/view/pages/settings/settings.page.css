@@ -1,18 +1,63 @@
 .settings-form {
   display: grid;
-  gap: 12px;
-  margin-top: 24px;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+  margin-top: 28px;
 }
 
 .settings-form label {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 650;
 }
 
-.settings-form .status-message {
-  margin-top: 0;
+.settings-form label[for='number-base'] {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.settings-form .ui-select {
-  width: 100%;
+.settings-form #number-base {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.settings-form label[for='secret-length'] {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.settings-form #secret-length {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.settings-form .settings-hint,
+.settings-form .status-message,
+.settings-form .ui-button {
+  grid-column: 1 / -1;
+}
+
+.settings-form .settings-hint {
+  margin-top: 4px;
+}
+
+.settings-form .status-message {
+  margin-top: 8px;
+}
+
+.settings-form .ui-button {
+  margin-top: 6px;
+}
+
+@media (max-width: 480px) {
+  .settings-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .settings-form label[for='number-base'],
+  .settings-form #number-base,
+  .settings-form label[for='secret-length'],
+  .settings-form #secret-length {
+    grid-column: 1;
+    grid-row: auto;
+  }
 }

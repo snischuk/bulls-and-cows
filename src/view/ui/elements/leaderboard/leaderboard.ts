@@ -64,15 +64,27 @@ export const createLeaderboard: CreateLeaderboard = (
       ...entries.map((entry: LeaderboardEntry): HTMLLIElement => {
         const { gameSettings, attemptsCount, elapsedTime } = entry.gameResult;
 
-        return createListItem({
+        const item: HTMLLIElement = createListItem({
           className: 'leaderboard-item',
-          text: t('leaderboardEntry', {
-            base: NUMBER_BASE_LABELS[gameSettings.numberBase],
-            length: gameSettings.secretLength,
-            attempts: attemptsCount,
-            time: formatElapsedTime(elapsedTime, language),
-          }),
         });
+
+        const settings: HTMLSpanElement = document.createElement('span');
+        settings.className = 'record-settings';
+        settings.textContent = t('recordSettings', {
+          base: NUMBER_BASE_LABELS[gameSettings.numberBase],
+          length: gameSettings.secretLength,
+        });
+
+        const result: HTMLSpanElement = document.createElement('span');
+        result.className = 'record-result';
+        result.textContent = t('recordResult', {
+          attempts: attemptsCount,
+          time: formatElapsedTime(elapsedTime, language),
+        });
+
+        item.append(settings, result);
+
+        return item;
       }),
     );
     list.hidden = entries.length === 0;

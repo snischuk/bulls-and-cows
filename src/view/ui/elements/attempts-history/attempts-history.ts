@@ -39,15 +39,39 @@ export const createAttemptsHistory: CreateAttemptsHistory = (
     attemptsHistory: readonly GuessAttempt[],
   ): void => {
     const attemptElements: HTMLLIElement[] = attemptsHistory.map(
-      (attempt: GuessAttempt): HTMLLIElement =>
-        createListItem({
+      (attempt: GuessAttempt): HTMLLIElement => {
+        const item: HTMLLIElement = createListItem({
           className: 'attempt-item',
-          text: t('attempt', {
+        });
+        item.setAttribute(
+          'aria-label',
+          t('attempt', {
             guess: attempt.guessSequence,
             bulls: attempt.bullsCount,
             cows: attempt.cowsCount,
           }),
-        }),
+        );
+
+        const sequence: HTMLSpanElement = document.createElement('span');
+        sequence.className = 'attempt-sequence';
+        sequence.textContent = attempt.guessSequence;
+
+        const feedback: HTMLSpanElement = document.createElement('span');
+        feedback.className = 'attempt-feedback';
+
+        const bulls: HTMLSpanElement = document.createElement('span');
+        bulls.className = 'feedback-bulls';
+        bulls.textContent = `${t('bullsLabel')}: ${attempt.bullsCount}`;
+
+        const cows: HTMLSpanElement = document.createElement('span');
+        cows.className = 'feedback-cows';
+        cows.textContent = `${t('cowsLabel')}: ${attempt.cowsCount}`;
+
+        feedback.append(bulls, cows);
+        item.append(sequence, feedback);
+
+        return item;
+      },
     );
 
     element.replaceChildren(...attemptElements);
