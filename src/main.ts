@@ -1,5 +1,4 @@
 import './style.css';
+import { initApp } from './view/app';
 
-const h1: HTMLHeadingElement = document.createElement('h1');
-h1.textContent = 'Bulls and Cows';
-document.body.appendChild(h1);
+initApp(document.body);
