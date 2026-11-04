@@ -1,7 +1,10 @@
 import { GAME_CONFIG, NUMBER_BASE_LABELS } from '@/game/game.config';
 import type { LeaderboardEntry } from '@/game/game.type';
 import type { Language } from '@/view/config/interface.config';
-import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
+import {
+  DEFAULT_LANGUAGE,
+  STATUS_REGION,
+} from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
 import { createListItem } from '@/view/ui/ui-kit/list-item/list-item';
@@ -52,7 +55,7 @@ export const createLeaderboard: CreateLeaderboard = (
 
   const status: HTMLParagraphElement = document.createElement('p');
   status.className = 'settings-hint';
-  status.setAttribute('role', 'status');
+  status.dataset.statusRegion = STATUS_REGION.LEADERBOARD;
 
   element.append(title, description, list, status);
 

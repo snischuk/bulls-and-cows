@@ -8,6 +8,10 @@
   gap: 36px;
 }
 
+.app-content {
+  display: contents;
+}
+
 @media (max-width: 800px) {
   .app {
     grid-template-columns: minmax(0, 640px);

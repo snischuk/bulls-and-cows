@@ -1,4 +1,4 @@
-import { LANGUAGE, THEME } from '@/view/config/interface.config';
+import { LANGUAGE, STATUS_REGION, THEME } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
 import type { PageAction } from '@/view/pages/page.type';
@@ -28,7 +28,7 @@ export const createPreferencesController: CreatePreferencesController = (
 
   const status: HTMLParagraphElement = document.createElement('p');
   status.className = 'preferences-status settings-hint';
-  status.setAttribute('role', 'status');
+  status.dataset.statusRegion = STATUS_REGION.PREFERENCES;
   status.hidden = !state.preferencesError;
   status.textContent = state.preferencesError ? t('preferencesError') : '';
 

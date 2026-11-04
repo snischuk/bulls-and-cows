@@ -22,3 +22,11 @@ export const LANGUAGE_LABELS: Readonly<Record<Language, string>> = {
 };
 
 export const TIME_FRACTION_DIGITS: number = 2;
+
+export const STATUS_REGION: Readonly<
+  Record<'PREFERENCES' | 'ROUND' | 'LEADERBOARD', string>
+> = {
+  PREFERENCES: 'preferences',
+  ROUND: 'round',
+  LEADERBOARD: 'leaderboard',
+};

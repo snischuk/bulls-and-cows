@@ -6,7 +6,10 @@ import {
 } from '@/game/game.config';
 import type { GameSettings, NumberBase } from '@/game/game.type';
 import type { Language } from '@/view/config/interface.config';
-import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
+import {
+  DEFAULT_LANGUAGE,
+  STATUS_REGION,
+} from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
 import '@/view/styles/page.css';
@@ -112,7 +115,7 @@ export const createSettingsPage: CreateSettingsPage = (
 
   const possibilities: HTMLParagraphElement = document.createElement('p');
   possibilities.className = 'status-message';
-  possibilities.setAttribute('role', 'status');
+  possibilities.dataset.statusRegion = STATUS_REGION.ROUND;
 
   const startButton: HTMLButtonElement = createButton({
     type: 'submit',

@@ -1,7 +1,10 @@
 import { NUMBER_BASE_LABELS } from '@/game/game.config';
 import type { GameSettings, GuessAttempt } from '@/game/game.type';
 import type { Language } from '@/view/config/interface.config';
-import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
+import {
+  DEFAULT_LANGUAGE,
+  STATUS_REGION,
+} from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
 import '@/view/styles/page.css';
@@ -57,7 +60,7 @@ export const createGamePage: CreateGamePage = (
 
   const statusMessage: HTMLParagraphElement = document.createElement('p');
   statusMessage.className = 'status-message';
-  statusMessage.setAttribute('role', 'status');
+  statusMessage.dataset.statusRegion = STATUS_REGION.ROUND;
   statusMessage.textContent = t('enterGuess');
 
   const { element: guessForm, input: guessInput } = createGuessForm(settings, {

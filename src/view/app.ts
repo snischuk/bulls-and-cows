@@ -7,6 +7,7 @@ import type { AppPage, PageAction } from '@/view/pages/page.type';
 import type { AppState } from '@/view/state/app-state';
 import { createAppState } from '@/view/state/app-state';
 import { createLeaderboard } from '@/view/ui/elements/leaderboard/leaderboard';
+import { createLiveStatus } from '@/view/ui/elements/live-status/live-status';
 import { createPageAnimator } from '@/view/utils/animate-page';
 
 type InitApp = (root: HTMLElement) => void;
@@ -18,6 +19,12 @@ export const initApp: InitApp = (root: HTMLElement): void => {
     createPageAnimator();
 
   root.classList.add('app');
+
+  const content: HTMLDivElement = document.createElement('div');
+  content.className = 'app-content';
+
+  const liveStatus: HTMLDivElement = createLiveStatus(content);
+  root.replaceChildren(content, liveStatus);
 
   const renderApp: PageAction = (): void => {
     const t: Translate = createTranslator(state.language);
@@ -45,7 +52,7 @@ export const initApp: InitApp = (root: HTMLElement): void => {
       state.storageMessage === undefined ? '' : t(state.storageMessage),
     );
 
-    root.replaceChildren(controls, page.element, leaderboard.element);
+    content.replaceChildren(controls, page.element, leaderboard.element);
 
     animatePage(page.element, state.gameState);
 
