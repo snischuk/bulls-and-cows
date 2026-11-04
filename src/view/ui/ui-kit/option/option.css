@@ -2,3 +2,44 @@
   background: var(--field-background);
   color: var(--text);
 }
+
+@supports (appearance: base-select) {
+  .ui-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;
+    padding: 10px 12px;
+    border-radius: calc(var(--radius) - 2px);
+    background: var(--surface);
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .ui-option:checked {
+    background: var(--slot-background);
+    font-weight: 650;
+  }
+
+  .ui-option:hover:not(:disabled) {
+    background: var(--secondary);
+  }
+
+  .ui-option:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: -2px;
+  }
+
+  .ui-option:disabled {
+    color: var(--muted);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .ui-option::checkmark {
+    order: 1;
+    margin-inline-start: auto;
+    color: var(--primary);
+  }
+}
