@@ -9,3 +9,16 @@
 .secondary-button:hover {
   background: var(--secondary-hover);
 }
+
+.round-guidance {
+  margin-top: 20px;
+  display: grid;
+  gap: 8px;
+}
+
+.round-alphabet {
+  font-family: var(--font-digits);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}

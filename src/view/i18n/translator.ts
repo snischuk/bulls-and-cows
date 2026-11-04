@@ -6,6 +6,7 @@ interface Messages {
   readonly guessLengthError: string;
   readonly guessUniqueError: string;
   readonly filteredDigits: string;
+  readonly roundRules: string;
   readonly restartConfirmation: string;
   readonly continueGame: string;
   readonly restartGame: string;
@@ -57,6 +58,8 @@ const english: Messages = {
   guessLengthError: 'Enter exactly {length} digits.',
   guessUniqueError: 'Use each digit only once.',
   filteredDigits: 'Only digits from the selected number system are kept.',
+  roundRules:
+    'Bulls: right digit, right place. Cows: right digit, different place. Digits cannot repeat; zero may come first.',
   restartConfirmation: 'Starting a new game will discard your current guesses.',
   continueGame: 'Continue playing',
   restartGame: 'Start over',
@@ -113,6 +116,8 @@ const russian: Messages = {
   guessLengthError: 'Нужное количество цифр: {length}.',
   guessUniqueError: 'Цифры не должны повторяться.',
   filteredDigits: 'Сохраняются только цифры выбранной системы счисления.',
+  roundRules:
+    'Быки: верная цифра на своём месте. Коровы: верная цифра на другом месте. Цифры не повторяются; ноль может быть первым.',
   restartConfirmation: 'При запуске новой игры текущие попытки будут потеряны.',
   continueGame: 'Продолжить игру',
   restartGame: 'Начать заново',

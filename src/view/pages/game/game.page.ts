@@ -83,14 +83,32 @@ export const createGamePage: CreateGamePage = (
     hidden: true,
   });
 
+  const guidance: HTMLDivElement = document.createElement('div');
+  guidance.className = 'round-guidance';
+  guidance.id = 'guess-guidance';
+
+  const alphabet: HTMLParagraphElement = document.createElement('p');
+  alphabet.className = 'round-alphabet';
+  alphabet.textContent = `${t('availableDigits')}: ${Array.from(
+    { length: settings.numberBase },
+    (_: unknown, index: number): string =>
+      index.toString(settings.numberBase).toUpperCase(),
+  ).join(' ')}`;
+
+  const rules: HTMLParagraphElement = document.createElement('p');
+  rules.className = 'settings-hint';
+  rules.textContent = t('roundRules');
+  guidance.append(alphabet, rules);
+
   guessInput.setAttribute(
     'aria-describedby',
-    'guess-status guess-filter-notice',
+    'guess-guidance guess-status guess-filter-notice',
   );
 
   card.append(
     title,
     description,
+    guidance,
     statusMessage,
     guessForm,
     attemptsTitle,
