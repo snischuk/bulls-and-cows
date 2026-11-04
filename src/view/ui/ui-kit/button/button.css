@@ -25,3 +25,15 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .ui-button {
+    transition:
+      transform var(--motion-duration-short) var(--motion-easing),
+      opacity var(--motion-duration-short) var(--motion-easing);
+  }
+
+  .ui-button:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+}

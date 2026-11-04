@@ -49,3 +49,38 @@
   font-size: 0.82rem;
   line-height: 1.6;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .game.page-enter {
+    animation: page-enter var(--motion-duration-enter) var(--motion-easing) both;
+  }
+
+  .status-message.victory-enter {
+    animation: victory-enter var(--motion-duration-enter) var(--motion-easing)
+      both;
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes victory-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

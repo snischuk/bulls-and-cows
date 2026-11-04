@@ -7,11 +7,15 @@ import type { AppPage, PageAction } from '@/view/pages/page.type';
 import type { AppState } from '@/view/state/app-state';
 import { createAppState } from '@/view/state/app-state';
 import { createLeaderboard } from '@/view/ui/elements/leaderboard/leaderboard';
+import { createPageAnimator } from '@/view/utils/animate-page';
 
 type InitApp = (root: HTMLElement) => void;
 
 export const initApp: InitApp = (root: HTMLElement): void => {
   const state: AppState = createAppState();
+
+  const animatePage: ReturnType<typeof createPageAnimator> =
+    createPageAnimator();
 
   root.classList.add('app');
 
@@ -42,6 +46,8 @@ export const initApp: InitApp = (root: HTMLElement): void => {
     );
 
     root.replaceChildren(controls, page.element, leaderboard.element);
+
+    animatePage(page.element, state.gameState);
 
     page.focus();
   };
