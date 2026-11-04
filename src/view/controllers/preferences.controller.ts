@@ -5,6 +5,7 @@ import type { PageAction } from '@/view/pages/page.type';
 import { languageService } from '@/view/service/language-storage.service';
 import { themeService } from '@/view/service/theme-storage.service';
 import type { AppState } from '@/view/state/app-state';
+import { resetRound } from '@/view/state/reset-round';
 import { createPreferencesControls } from '@/view/ui/elements/preferences-controls/preferences-controls';
 
 type CreatePreferencesController = (
@@ -69,8 +70,17 @@ export const createPreferencesController: CreatePreferencesController = (
     document.getElementById(controls.themeSelect.id)?.focus();
   };
 
+  const handleNewGame: PageAction = (): void => {
+    preserveView();
+
+    resetRound(state);
+
+    renderApp();
+  };
+
   controls.languageSelect.addEventListener('change', handleLanguageChange);
   controls.themeSelect.addEventListener('change', handleThemeChange);
+  controls.newGameButton.addEventListener('click', handleNewGame);
 
   return controls.element;
 };

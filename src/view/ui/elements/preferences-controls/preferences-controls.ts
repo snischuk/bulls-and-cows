@@ -7,6 +7,7 @@ import {
 } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
+import { createButton } from '@/view/ui/ui-kit/button/button';
 import { createOption } from '@/view/ui/ui-kit/option/option';
 import { createSelect } from '@/view/ui/ui-kit/select/select';
 
@@ -25,6 +26,7 @@ interface PreferencesControls {
   readonly element: HTMLElement;
   readonly languageSelect: HTMLSelectElement;
   readonly themeSelect: HTMLSelectElement;
+  readonly newGameButton: HTMLButtonElement;
 }
 
 type CreatePreferencesControls = (
@@ -90,7 +92,19 @@ export const createPreferencesControls: CreatePreferencesControls = (
 
   themeLabel.htmlFor = themeSelect.id;
 
-  element.append(brand, languageLabel, languageSelect, themeLabel, themeSelect);
+  const newGameButton: HTMLButtonElement = createButton({
+    text: t('newGame'),
+    className: 'header-new-game',
+  });
 
-  return { element, languageSelect, themeSelect };
+  element.append(
+    brand,
+    languageLabel,
+    languageSelect,
+    themeLabel,
+    themeSelect,
+    newGameButton,
+  );
+
+  return { element, languageSelect, themeSelect, newGameButton };
 };

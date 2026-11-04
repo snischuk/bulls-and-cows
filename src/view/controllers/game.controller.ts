@@ -13,6 +13,7 @@ import { createGamePage } from '@/view/pages/game/game.page';
 import type { AppPage, PageAction } from '@/view/pages/page.type';
 import { leaderboardService } from '@/view/service/leaderboard-storage.service';
 import type { AppState } from '@/view/state/app-state';
+import { resetRound } from '@/view/state/reset-round';
 import { formatElapsedTime } from '@/view/utils/format-elapsed-time';
 
 type CreateGameController = (state: AppState, renderApp: PageAction) => AppPage;
@@ -94,9 +95,7 @@ export const createGameController: CreateGameController = (
   };
 
   const handleNewGame: PageAction = (): void => {
-    state.gameState = null;
-    state.gameResult = null;
-    state.guessDraft = '';
+    resetRound(state);
 
     renderApp();
   };

@@ -53,13 +53,36 @@
   text-align: right;
 }
 
+.header-new-game {
+  min-height: 36px;
+  margin-inline-start: 12px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
 @media (max-width: 600px) {
   .game-brand {
-    flex-basis: 100%;
+    grid-column: 1 / 4;
+    grid-row: 1;
     margin-bottom: 10px;
+    font-size: 0.9rem;
   }
 
   .preferences-controls {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
     padding: 18px 0;
+  }
+
+  .header-new-game {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+    margin: 0 0 10px;
+  }
+
+  .preferences-status {
+    grid-column: 1 / -1;
   }
 }
