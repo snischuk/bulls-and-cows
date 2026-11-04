@@ -5,6 +5,27 @@
 }
 
 :root {
+  color-scheme: light;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --on-primary: #fff;
+  --secondary: #0f766e;
+  --secondary-hover: #115e59;
+  --text: #18212f;
+  --muted: #526174;
+  --background: #f1f5f9;
+  --glow-blue: #dbeafe;
+  --glow-green: #ccfbf1;
+  --surface: rgb(255 255 255 / 92%);
+  --border: #cbd5e1;
+  --card-border: #dbe3ed;
+  --shadow: rgb(15 23 42 / 10%);
+  --status-background: #eff6ff;
+  --status-text: #1e40af;
+  --field-background: #fff;
+  --item-background: #f8fafc;
+  --item-text: #334155;
+  --focus: #93c5fd;
   font-family:
     Inter,
     ui-sans-serif,
@@ -13,8 +34,8 @@
     BlinkMacSystemFont,
     'Segoe UI',
     sans-serif;
-  color: #18212f;
-  background: #f1f5f9;
+  color: var(--text);
+  background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -24,8 +45,9 @@ body {
   min-height: 100vh;
   padding: 32px 16px;
   background:
-    radial-gradient(circle at 15% 10%, #dbeafe 0, transparent 35%),
-    radial-gradient(circle at 90% 90%, #ccfbf1 0, transparent 30%), #f1f5f9;
+    radial-gradient(circle at 15% 10%, var(--glow-blue) 0, transparent 35%),
+    radial-gradient(circle at 90% 90%, var(--glow-green) 0, transparent 30%),
+    var(--background);
 }
 
 .game {
@@ -37,10 +59,10 @@ body {
 .game-card {
   width: min(100%, 480px);
   padding: 32px;
-  border: 1px solid #dbe3ed;
+  border: 1px solid var(--card-border);
   border-radius: 20px;
-  background: rgb(255 255 255 / 92%);
-  box-shadow: 0 24px 60px rgb(15 23 42 / 10%);
+  background: var(--surface);
+  box-shadow: 0 24px 60px var(--shadow);
 }
 
 h1 {
@@ -50,7 +72,7 @@ h1 {
 
 .settings-description {
   margin-top: 8px;
-  color: #526174;
+  color: var(--muted);
   line-height: 1.5;
 }
 
@@ -59,8 +81,8 @@ h1 {
   margin-top: 24px;
   padding: 14px 16px;
   border-radius: 12px;
-  background: #eff6ff;
-  color: #1e40af;
+  background: var(--status-background);
+  color: var(--status-text);
   line-height: 1.4;
 }
 
@@ -78,9 +100,11 @@ h1 {
 }
 
 .guess-form input {
+  background: var(--field-background);
+  color: var(--text);
   min-width: 0;
   padding: 12px 14px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--border);
   border-radius: 10px;
   font: inherit;
   font-size: 1.1rem;
@@ -89,7 +113,7 @@ h1 {
 
 .guess-form input:focus-visible,
 button:focus-visible {
-  outline: 3px solid #93c5fd;
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -97,8 +121,8 @@ button {
   padding: 12px 16px;
   border: 0;
   border-radius: 10px;
-  background: #2563eb;
-  color: #fff;
+  background: var(--primary);
+  color: var(--on-primary);
   cursor: pointer;
   font: inherit;
   font-weight: 650;
@@ -106,7 +130,7 @@ button {
 }
 
 button:hover {
-  background: #1d4ed8;
+  background: var(--primary-hover);
 }
 
 h2 {
@@ -124,19 +148,19 @@ h2 {
 .attempt-item {
   padding: 10px 12px;
   border-radius: 8px;
-  background: #f8fafc;
-  color: #334155;
+  background: var(--item-background);
+  color: var(--item-text);
   font-variant-numeric: tabular-nums;
 }
 
 .secondary-button {
   width: 100%;
   margin-top: 20px;
-  background: #0f766e;
+  background: var(--secondary);
 }
 
 .secondary-button:hover {
-  background: #115e59;
+  background: var(--secondary-hover);
 }
 
 [hidden] {
@@ -171,20 +195,20 @@ h2 {
 .settings-form select {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid var(--border);
   border-radius: 10px;
-  background: #fff;
+  background: var(--field-background);
   color: inherit;
   font: inherit;
 }
 
 .settings-form select:focus-visible {
-  outline: 3px solid #93c5fd;
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
 .settings-hint {
-  color: #526174;
+  color: var(--muted);
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -235,4 +259,51 @@ h2 {
   .app {
     grid-template-columns: minmax(0, 480px);
   }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --text: #e2e8f0;
+  --muted: #a8b7cd;
+  --background: #0f172a;
+  --glow-blue: #172e50;
+  --glow-green: #123c3c;
+  --surface: #182338;
+  --border: #475569;
+  --card-border: #334155;
+  --shadow: rgb(0 0 0 / 30%);
+  --status-background: #1e3555;
+  --status-text: #bfdbfe;
+  --field-background: #0f172a;
+  --item-background: #243249;
+  --item-text: #e2e8f0;
+  --focus: #60a5fa;
+}
+
+.preferences-controls {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.preferences-controls select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--field-background);
+  color: var(--text);
+  font: inherit;
+}
+
+.preferences-controls select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.preferences-status {
+  flex-basis: 100%;
+  text-align: right;
 }
