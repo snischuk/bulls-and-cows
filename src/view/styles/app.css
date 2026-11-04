@@ -1,0 +1,17 @@
+.app {
+  display: grid;
+  grid-template-columns: minmax(0, 480px) minmax(0, 420px);
+  justify-content: center;
+  align-items: start;
+  gap: 24px;
+}
+
+.app > .game {
+  min-height: 0;
+}
+
+@media (max-width: 800px) {
+  .app {
+    grid-template-columns: minmax(0, 480px);
+  }
+}

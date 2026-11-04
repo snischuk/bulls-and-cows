@@ -1,5 +1,4 @@
 import { initApp } from '@/view/app';
-
-import './style.css';
+import '@/view/styles/index.css';
 
 initApp(document.body);
