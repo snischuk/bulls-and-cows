@@ -2,6 +2,9 @@ import type { Language } from '@/view/config/interface.config';
 import { LANGUAGE } from '@/view/config/interface.config';
 
 interface Messages {
+  readonly restartConfirmation: string;
+  readonly continueGame: string;
+  readonly restartGame: string;
   readonly title: string;
   readonly settingsTitle: string;
   readonly roundTitle: string;
@@ -46,6 +49,9 @@ interface Messages {
 export type MessageKey = keyof Messages;
 
 const english: Messages = {
+  restartConfirmation: 'Starting a new game will discard your current guesses.',
+  continueGame: 'Continue playing',
+  restartGame: 'Start over',
   title: 'Bulls and Cows',
   settingsTitle: 'Set up the board',
   roundTitle: 'Find the secret',
@@ -95,6 +101,9 @@ const english: Messages = {
 };
 
 const russian: Messages = {
+  restartConfirmation: 'При запуске новой игры текущие попытки будут потеряны.',
+  continueGame: 'Продолжить игру',
+  restartGame: 'Начать заново',
   title: 'Быки и коровы',
   settingsTitle: 'Настройте игру',
   roundTitle: 'Угадайте секрет',

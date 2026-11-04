@@ -1,3 +1,4 @@
+import { GAME_STATUS } from '@/game/game.config';
 import { LANGUAGE, STATUS_REGION, THEME } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
@@ -73,11 +74,29 @@ export const createPreferencesController: CreatePreferencesController = (
   const handleNewGame: PageAction = (): void => {
     preserveView();
 
+    if (
+      state.gameState?.gameStatus === GAME_STATUS.PLAYING &&
+      state.gameState.attemptsHistory.length > 0
+    ) {
+      controls.restartModal.open();
+      return;
+    }
+
     resetRound(state);
 
     renderApp();
   };
 
+  const cancelRestart: PageAction = (): void => {
+    controls.restartModal.close();
+  };
+
+  controls.continueButton.addEventListener('click', cancelRestart);
+  controls.restartButton.addEventListener('click', (): void => {
+    controls.restartModal.close();
+    resetRound(state);
+    renderApp();
+  });
   controls.languageSelect.addEventListener('change', handleLanguageChange);
   controls.themeSelect.addEventListener('change', handleThemeChange);
   controls.newGameButton.addEventListener('click', handleNewGame);

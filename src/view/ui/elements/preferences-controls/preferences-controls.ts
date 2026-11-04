@@ -8,6 +8,7 @@ import {
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
 import { createButton } from '@/view/ui/ui-kit/button/button';
+import { createModal } from '@/view/ui/ui-kit/modal/modal';
 import { createOption } from '@/view/ui/ui-kit/option/option';
 import { createSelect } from '@/view/ui/ui-kit/select/select';
 
@@ -27,6 +28,9 @@ interface PreferencesControls {
   readonly languageSelect: HTMLSelectElement;
   readonly themeSelect: HTMLSelectElement;
   readonly newGameButton: HTMLButtonElement;
+  readonly restartModal: ReturnType<typeof createModal>;
+  readonly continueButton: HTMLButtonElement;
+  readonly restartButton: HTMLButtonElement;
 }
 
 type CreatePreferencesControls = (
@@ -97,6 +101,30 @@ export const createPreferencesControls: CreatePreferencesControls = (
     className: 'header-new-game',
   });
 
+  const restartDescription: HTMLParagraphElement = document.createElement('p');
+  restartDescription.id = 'restart-description';
+  restartDescription.textContent = t('restartConfirmation');
+
+  const continueButton: HTMLButtonElement = createButton({
+    text: t('continueGame'),
+    className: 'secondary-button',
+  });
+  const restartButton: HTMLButtonElement = createButton({
+    text: t('restartGame'),
+  });
+  const actions: HTMLDivElement = document.createElement('div');
+  actions.className = 'ui-modal-actions';
+  actions.append(continueButton, restartButton);
+
+  const restartModal: ReturnType<typeof createModal> = createModal({
+    id: 'restart-prompt',
+    label: t('restartConfirmation'),
+    content: [restartDescription, actions],
+    initialFocus: continueButton,
+  });
+  newGameButton.setAttribute('aria-controls', restartModal.element.id);
+  newGameButton.setAttribute('aria-haspopup', 'dialog');
+
   element.append(
     brand,
     languageLabel,
@@ -104,7 +132,16 @@ export const createPreferencesControls: CreatePreferencesControls = (
     themeLabel,
     themeSelect,
     newGameButton,
+    restartModal.element,
   );
 
-  return { element, languageSelect, themeSelect, newGameButton };
+  return {
+    element,
+    languageSelect,
+    themeSelect,
+    newGameButton,
+    restartModal,
+    continueButton,
+    restartButton,
+  };
 };
