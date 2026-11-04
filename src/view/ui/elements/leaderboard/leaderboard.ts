@@ -36,7 +36,7 @@ export const createLeaderboard: CreateLeaderboard = (
 
   const t: Translate = createTranslator(language);
 
-  const element: HTMLElement = document.createElement('section');
+  const element: HTMLElement = document.createElement('aside');
   Object.assign(element, { className: 'leaderboard game-card' }, properties);
 
   const title: HTMLHeadingElement = document.createElement('h2');

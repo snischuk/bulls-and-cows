@@ -1,21 +1,29 @@
 .app {
-  display: grid;
-  grid-template-columns: minmax(0, 640px) minmax(240px, 304px);
   max-width: 1000px;
   margin-inline: auto;
-  align-items: start;
-  align-content: start;
-  gap: 36px;
 }
 
 .app-content {
-  display: contents;
+  display: grid;
+  gap: 36px;
+}
+
+.app-main {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) minmax(240px, 304px);
+  align-items: start;
+  gap: 36px;
 }
 
 @media (max-width: 800px) {
-  .app {
+  .app-content {
     grid-template-columns: minmax(0, 640px);
     justify-content: center;
+    gap: 24px;
+  }
+
+  .app-main {
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
 }

@@ -52,7 +52,11 @@ export const initApp: InitApp = (root: HTMLElement): void => {
       state.storageMessage === undefined ? '' : t(state.storageMessage),
     );
 
-    content.replaceChildren(controls, page.element, leaderboard.element);
+    const main: HTMLElement = document.createElement('main');
+    main.className = 'app-main';
+    main.append(page.element, leaderboard.element);
+
+    content.replaceChildren(controls, main);
 
     animatePage(page.element, state.gameState);
 

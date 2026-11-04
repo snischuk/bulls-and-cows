@@ -48,14 +48,17 @@ export const createSettingsPage: CreateSettingsPage = (
 
   const t: Translate = createTranslator(language);
 
-  const element: HTMLElement = document.createElement('main');
+  const element: HTMLElement = document.createElement('section');
   Object.assign(element, { className: 'game' }, properties);
 
-  const card: HTMLElement = document.createElement('section');
+  const card: HTMLDivElement = document.createElement('div');
   card.className = 'game-card';
 
   const title: HTMLHeadingElement = document.createElement('h1');
+  title.id = 'game-title';
   title.textContent = t('settingsTitle');
+
+  element.setAttribute('aria-labelledby', title.id);
 
   const description: HTMLParagraphElement = document.createElement('p');
   description.className = 'settings-description';
