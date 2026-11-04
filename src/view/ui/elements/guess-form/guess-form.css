@@ -1,0 +1,37 @@
+.guess-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.guess-form label {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  font-weight: 650;
+}
+
+.guess-form .ui-text-input {
+  font-family: var(--font-digits);
+  font-size: clamp(1.25rem, 4vw, 1.8rem);
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .guess-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.guess-form .settings-hint {
+  grid-column: 1 / -1;
+}
+
+.guess-form .settings-hint:empty {
+  display: none;
+}
+
+.guess-form [aria-invalid='true'] {
+  border-width: 2px;
+}

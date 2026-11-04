@@ -1,0 +1,88 @@
+.preferences-controls {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.game-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: auto;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.04em;
+}
+
+.game-mark {
+  display: grid;
+  grid-template-columns: repeat(2, 8px);
+  gap: 4px;
+}
+
+.game-mark span {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+}
+
+.game-mark span:nth-child(-n + 2) {
+  background: var(--primary);
+}
+
+.preferences-controls label {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.preferences-controls .ui-select {
+  min-height: 36px;
+  padding: 6px 8px;
+  border-color: transparent;
+  background: transparent;
+  font-size: 0.8rem;
+}
+
+.preferences-status {
+  flex-basis: 100%;
+  text-align: right;
+}
+
+.header-new-game {
+  min-height: 36px;
+  margin-inline-start: 12px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .game-brand {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+  }
+
+  .preferences-controls {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto minmax(0, 1fr);
+    padding: 18px 0;
+  }
+
+  .header-new-game {
+    grid-column: 4;
+    grid-row: 1;
+    justify-self: end;
+    margin: 0 0 10px;
+  }
+
+  .preferences-status {
+    grid-column: 1 / -1;
+  }
+}
