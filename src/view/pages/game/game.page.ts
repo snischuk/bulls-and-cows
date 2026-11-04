@@ -63,6 +63,7 @@ export const createGamePage: CreateGamePage = (
 
   const statusMessage: HTMLParagraphElement = document.createElement('p');
   statusMessage.className = 'status-message';
+  statusMessage.id = 'guess-status';
   statusMessage.dataset.statusRegion = STATUS_REGION.ROUND;
   statusMessage.textContent = t('enterGuess');
 
@@ -81,6 +82,11 @@ export const createGamePage: CreateGamePage = (
     className: 'secondary-button',
     hidden: true,
   });
+
+  guessInput.setAttribute(
+    'aria-describedby',
+    'guess-status guess-filter-notice',
+  );
 
   card.append(
     title,

@@ -4,6 +4,18 @@ import type { Translate } from './translator';
 import { createTranslator } from './translator';
 
 describe('translations', (): void => {
+  it('announces distinct attempts with their deduction feedback', (): void => {
+    const t: Translate = createTranslator('en');
+    expect(
+      t('guessFeedback', { attempt: 2, guess: '0123', bulls: 1, cows: 2 }),
+    ).toBe('Guess 2: 0123. Bulls: 1, cows: 2.');
+    expect(t('guessLengthError', { length: 4 })).toBe(
+      'Enter exactly 4 digits.',
+    );
+    expect(createTranslator('ru')('guessUniqueError')).toBe(
+      'Цифры не должны повторяться.',
+    );
+  });
   it('keeps translators independent', (): void => {
     const english: Translate = createTranslator('en');
 

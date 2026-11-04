@@ -3,7 +3,11 @@ import {
   GUESS_REJECTION_REASON,
   GUESS_SUBMISSION_STATUS,
 } from '@/game/game.config';
-import type { GuessRejectionReason, MakeGuessResult } from '@/game/game.type';
+import type {
+  GuessAttempt,
+  GuessRejectionReason,
+  MakeGuessResult,
+} from '@/game/game.type';
 import { updateLeaderboard } from '@/game/leaderboard/update-leaderboard';
 import { finishGame } from '@/game/lifecycle/finish-game';
 import { makeGuess } from '@/game/lifecycle/make-guess';
@@ -41,9 +45,30 @@ export const createGameController: CreateGameController = (
   );
   page.renderAttempts(state.gameState.attemptsHistory);
   page.guessInput.value = state.guessDraft;
+  if (
+    [
+      'guessLengthError',
+      'guessUniqueError',
+      'duplicateGuess',
+      'invalidGuess',
+    ].includes(state.notice)
+  ) {
+    page.guessInput.setAttribute('aria-invalid', 'true');
+  }
+  const latestAttempt: GuessAttempt | undefined =
+    state.gameState.attemptsHistory.at(-1);
+  const roundNotice: string =
+    state.notice === 'tryAgain' && latestAttempt !== undefined
+      ? t('guessFeedback', {
+          attempt: state.gameState.attemptsHistory.length,
+          guess: latestAttempt.guessSequence,
+          bulls: latestAttempt.bullsCount,
+          cows: latestAttempt.cowsCount,
+        })
+      : t(state.notice, { length: state.gameState.gameSettings.secretLength });
   page.statusMessage.textContent =
     state.gameResult === null
-      ? t(state.notice)
+      ? roundNotice
       : t('victory', {
           secret: state.gameState.secretSequence,
           attempts: state.gameResult.attemptsCount,
@@ -68,7 +93,18 @@ export const createGameController: CreateGameController = (
 
     if (result.status === GUESS_SUBMISSION_STATUS.REJECTED) {
       state.notice = REJECTION_KEYS[result.reason];
-      page.statusMessage.textContent = t(state.notice);
+      if (result.reason === GUESS_REJECTION_REASON.INVALID) {
+        state.notice =
+          page.guessInput.value.length !==
+          state.gameState.gameSettings.secretLength
+            ? 'guessLengthError'
+            : 'guessUniqueError';
+      }
+      page.guessInput.setAttribute('aria-invalid', 'true');
+      page.statusMessage.textContent = t(state.notice, {
+        length: state.gameState.gameSettings.secretLength,
+      });
+      page.guessInput.focus();
       return;
     }
 

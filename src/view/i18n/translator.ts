@@ -2,6 +2,10 @@ import type { Language } from '@/view/config/interface.config';
 import { LANGUAGE } from '@/view/config/interface.config';
 
 interface Messages {
+  readonly guessFeedback: string;
+  readonly guessLengthError: string;
+  readonly guessUniqueError: string;
+  readonly filteredDigits: string;
   readonly restartConfirmation: string;
   readonly continueGame: string;
   readonly restartGame: string;
@@ -49,6 +53,10 @@ interface Messages {
 export type MessageKey = keyof Messages;
 
 const english: Messages = {
+  guessFeedback: 'Guess {attempt}: {guess}. Bulls: {bulls}, cows: {cows}.',
+  guessLengthError: 'Enter exactly {length} digits.',
+  guessUniqueError: 'Use each digit only once.',
+  filteredDigits: 'Only digits from the selected number system are kept.',
   restartConfirmation: 'Starting a new game will discard your current guesses.',
   continueGame: 'Continue playing',
   restartGame: 'Start over',
@@ -101,6 +109,10 @@ const english: Messages = {
 };
 
 const russian: Messages = {
+  guessFeedback: 'Попытка {attempt}: {guess}. Быки: {bulls}, коровы: {cows}.',
+  guessLengthError: 'Нужное количество цифр: {length}.',
+  guessUniqueError: 'Цифры не должны повторяться.',
+  filteredDigits: 'Сохраняются только цифры выбранной системы счисления.',
   restartConfirmation: 'При запуске новой игры текущие попытки будут потеряны.',
   continueGame: 'Продолжить игру',
   restartGame: 'Начать заново',

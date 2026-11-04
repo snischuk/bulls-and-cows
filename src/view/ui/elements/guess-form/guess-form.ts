@@ -61,18 +61,26 @@ export const createGuessForm: CreateGuessForm = (
     settings.numberBase,
   );
 
+  const filterNotice: HTMLParagraphElement = document.createElement('p');
+  filterNotice.id = 'guess-filter-notice';
+  filterNotice.className = 'settings-hint';
+  filterNotice.setAttribute('role', 'status');
+
   const handleGuessInput: InputHandler = (): void => {
     const filteredGuess: string = [...input.value]
       .filter((character: string): boolean => isValidDigit(character))
       .slice(0, settings.secretLength)
       .join('');
 
+    filterNotice.textContent =
+      input.value !== filteredGuess ? t('filteredDigits') : '';
     if (input.value !== filteredGuess) input.value = filteredGuess;
+    input.removeAttribute('aria-invalid');
   };
 
   input.addEventListener('input', handleGuessInput);
 
-  element.append(label, input, submitButton);
+  element.append(label, input, submitButton, filterNotice);
 
   return { element, input };
 };

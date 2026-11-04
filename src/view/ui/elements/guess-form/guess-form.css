@@ -23,3 +23,15 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.guess-form .settings-hint {
+  grid-column: 1 / -1;
+}
+
+.guess-form .settings-hint:empty {
+  display: none;
+}
+
+.guess-form [aria-invalid='true'] {
+  border-width: 2px;
+}
