@@ -1,8 +1,5 @@
-import {
-  DEFAULT_LANGUAGE,
-  LANGUAGE,
-  type Language,
-} from '@/view/config/interface.config';
+import type { Language } from '@/view/config/interface.config';
+import { DEFAULT_LANGUAGE, LANGUAGE } from '@/view/config/interface.config';
 import { readStorage, writeStorage } from '@/view/infrastructure/local-storage';
 
 interface LanguageService {

@@ -25,6 +25,20 @@ export default [
     files: ['**/*.ts'],
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'separate-type-imports',
+        },
+      ],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: "ImportSpecifier[importKind='type']",
+          message: 'Use a separate import type declaration.',
+        },
+      ],
       '@typescript-eslint/typedef': [
         'error',
         {

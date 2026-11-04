@@ -7,11 +7,8 @@ import type { GuessRejectionReason, MakeGuessResult } from '@/game/game.type';
 import { updateLeaderboard } from '@/game/leaderboard/update-leaderboard';
 import { finishGame } from '@/game/lifecycle/finish-game';
 import { makeGuess } from '@/game/lifecycle/make-guess';
-import {
-  type MessageKey,
-  type Translate,
-  createTranslator,
-} from '@/view/i18n/translator';
+import type { MessageKey, Translate } from '@/view/i18n/translator';
+import { createTranslator } from '@/view/i18n/translator';
 import { createGamePage } from '@/view/pages/game.page';
 import type { AppPage, PageAction } from '@/view/pages/page.type';
 import { leaderboardService } from '@/view/service/leaderboard-storage.service';

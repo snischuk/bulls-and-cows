@@ -1,4 +1,5 @@
-import { type Mock, afterEach, describe, expect, it, vi } from 'vitest';
+import type { Mock } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { readStorage, removeStorage, writeStorage } from './local-storage';
 

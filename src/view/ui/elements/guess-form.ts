@@ -1,14 +1,11 @@
-import {
-  type DigitValidator,
-  createDigitValidator,
-} from '@/game/core/create-digit-validator';
+import type { DigitValidator } from '@/game/core/create-digit-validator';
+import { createDigitValidator } from '@/game/core/create-digit-validator';
 import { NUMBER_BASE } from '@/game/game.config';
 import type { GameSettings } from '@/game/game.type';
-import {
-  DEFAULT_LANGUAGE,
-  type Language,
-} from '@/view/config/interface.config';
-import { type Translate, createTranslator } from '@/view/i18n/translator';
+import type { Language } from '@/view/config/interface.config';
+import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
+import type { Translate } from '@/view/i18n/translator';
+import { createTranslator } from '@/view/i18n/translator';
 import { createButton } from '@/view/ui/ui-kit/button';
 import { createTextInput } from '@/view/ui/ui-kit/text-input';
 

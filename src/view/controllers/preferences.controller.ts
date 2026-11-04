@@ -1,5 +1,6 @@
 import { LANGUAGE, THEME } from '@/view/config/interface.config';
-import { type Translate, createTranslator } from '@/view/i18n/translator';
+import type { Translate } from '@/view/i18n/translator';
+import { createTranslator } from '@/view/i18n/translator';
 import type { PageAction } from '@/view/pages/page.type';
 import { languageService } from '@/view/service/language-storage.service';
 import { themeService } from '@/view/service/theme-storage.service';

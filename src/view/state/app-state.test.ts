@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { type AppState, createAppState } from './app-state';
+import type { AppState } from './app-state';
+import { createAppState } from './app-state';
 
 afterEach((): void => {
   vi.unstubAllGlobals();

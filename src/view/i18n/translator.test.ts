@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 
-import { type Translate, createTranslator } from './translator';
+import type { Translate } from './translator';
+import { createTranslator } from './translator';
 
 describe('translations', (): void => {
   it('keeps translators independent', (): void => {

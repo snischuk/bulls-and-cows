@@ -1,11 +1,12 @@
-import { type Language } from '@/view/config/interface.config';
+import type { Language } from '@/view/config/interface.config';
+import type { Theme } from '@/view/config/interface.config';
 import {
   LANGUAGE,
   LANGUAGE_LABELS,
   THEME,
-  type Theme,
 } from '@/view/config/interface.config';
-import { type Translate, createTranslator } from '@/view/i18n/translator';
+import type { Translate } from '@/view/i18n/translator';
+import { createTranslator } from '@/view/i18n/translator';
 import { createOption } from '@/view/ui/ui-kit/option';
 import { createSelect } from '@/view/ui/ui-kit/select';
 

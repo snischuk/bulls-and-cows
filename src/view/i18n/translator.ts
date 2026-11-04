@@ -1,4 +1,5 @@
-import { LANGUAGE, type Language } from '@/view/config/interface.config';
+import type { Language } from '@/view/config/interface.config';
+import { LANGUAGE } from '@/view/config/interface.config';
 
 interface Messages {
   readonly title: string;

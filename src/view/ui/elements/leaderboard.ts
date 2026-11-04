@@ -1,10 +1,9 @@
 import { GAME_CONFIG, NUMBER_BASE_LABELS } from '@/game/game.config';
 import type { LeaderboardEntry } from '@/game/game.type';
-import {
-  DEFAULT_LANGUAGE,
-  type Language,
-} from '@/view/config/interface.config';
-import { type Translate, createTranslator } from '@/view/i18n/translator';
+import type { Language } from '@/view/config/interface.config';
+import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
+import type { Translate } from '@/view/i18n/translator';
+import { createTranslator } from '@/view/i18n/translator';
 import { createList } from '@/view/ui/ui-kit/list';
 import { createListItem } from '@/view/ui/ui-kit/list-item';
 import { formatElapsedTime } from '@/view/utils/format-elapsed-time';

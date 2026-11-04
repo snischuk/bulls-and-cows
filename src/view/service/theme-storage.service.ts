@@ -1,8 +1,5 @@
-import {
-  DEFAULT_THEME,
-  THEME,
-  type Theme,
-} from '@/view/config/interface.config';
+import type { Theme } from '@/view/config/interface.config';
+import { DEFAULT_THEME, THEME } from '@/view/config/interface.config';
 import { readStorage, writeStorage } from '@/view/infrastructure/local-storage';
 
 interface ThemeService {
