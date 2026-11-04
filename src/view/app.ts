@@ -1,10 +1,10 @@
-import { createGameController } from './controllers/game.controller';
-import { createPreferencesController } from './controllers/preferences.controller';
-import { createSettingsController } from './controllers/settings.controller';
-import { type Translate, createTranslator } from './i18n/translator';
-import type { AppPage, PageAction } from './pages/page.type';
-import { type AppState, createAppState } from './state/app-state';
-import { createLeaderboard } from './ui/elements/leaderboard';
+import { createGameController } from '@/view/controllers/game.controller';
+import { createPreferencesController } from '@/view/controllers/preferences.controller';
+import { createSettingsController } from '@/view/controllers/settings.controller';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import type { AppPage, PageAction } from '@/view/pages/page.type';
+import { type AppState, createAppState } from '@/view/state/app-state';
+import { createLeaderboard } from '@/view/ui/elements/leaderboard';
 
 type InitApp = (root: HTMLElement) => void;
 

@@ -1,13 +1,16 @@
 import {
   type DigitValidator,
   createDigitValidator,
-} from '../../../game/core/create-digit-validator';
-import { NUMBER_BASE } from '../../../game/game.config';
-import type { GameSettings } from '../../../game/game.type';
-import { DEFAULT_LANGUAGE, type Language } from '../../config/interface.config';
-import { type Translate, createTranslator } from '../../i18n/translator';
-import { createButton } from '../ui-kit/button';
-import { createTextInput } from '../ui-kit/text-input';
+} from '@/game/core/create-digit-validator';
+import { NUMBER_BASE } from '@/game/game.config';
+import type { GameSettings } from '@/game/game.type';
+import {
+  DEFAULT_LANGUAGE,
+  type Language,
+} from '@/view/config/interface.config';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import { createButton } from '@/view/ui/ui-kit/button';
+import { createTextInput } from '@/view/ui/ui-kit/text-input';
 
 interface GuessFormOptions extends Readonly<Partial<HTMLFormElement>> {
   readonly language?: Language;

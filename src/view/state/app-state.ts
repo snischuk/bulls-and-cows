@@ -3,12 +3,12 @@ import type {
   GameSettings,
   GameState,
   LeaderboardEntry,
-} from '../../game/game.type';
-import type { Language, Theme } from '../config/interface.config';
-import type { MessageKey } from '../i18n/translator';
-import { languageService } from '../service/language-storage.service';
-import { leaderboardService } from '../service/leaderboard-storage.service';
-import { themeService } from '../service/theme-storage.service';
+} from '@/game/game.type';
+import type { Language, Theme } from '@/view/config/interface.config';
+import type { MessageKey } from '@/view/i18n/translator';
+import { languageService } from '@/view/service/language-storage.service';
+import { leaderboardService } from '@/view/service/leaderboard-storage.service';
+import { themeService } from '@/view/service/theme-storage.service';
 
 export interface AppState {
   language: Language;

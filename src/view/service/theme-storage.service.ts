@@ -1,5 +1,9 @@
-import { DEFAULT_THEME, THEME, type Theme } from '../config/interface.config';
-import { readStorage, writeStorage } from '../infrastructure/local-storage';
+import {
+  DEFAULT_THEME,
+  THEME,
+  type Theme,
+} from '@/view/config/interface.config';
+import { readStorage, writeStorage } from '@/view/infrastructure/local-storage';
 
 interface ThemeService {
   readonly load: () => Theme;

@@ -1,5 +1,5 @@
-import { GAME_CONFIG } from '../game.config';
-import type { GameSettings, NumberBase } from '../game.type';
+import { GAME_CONFIG } from '@/game/game.config';
+import type { GameSettings, NumberBase } from '@/game/game.type';
 
 type IsValidGameSettings = (settings: unknown) => settings is GameSettings;
 

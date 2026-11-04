@@ -1,13 +1,13 @@
 import { describe, expect, it } from 'vitest';
 
-import { GAME_STATUS, GUESS_SUBMISSION_STATUS } from '../game.config';
+import { GAME_STATUS, GUESS_SUBMISSION_STATUS } from '@/game/game.config';
 import type {
   GameResult,
   GameSettings,
   GameState,
   MakeGuessResult,
   RandomSource,
-} from '../game.type';
+} from '@/game/game.type';
 
 import { finishGame } from './finish-game';
 import { makeGuess } from './make-guess';

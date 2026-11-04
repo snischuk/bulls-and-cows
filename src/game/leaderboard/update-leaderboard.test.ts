@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import type { LeaderboardEntry } from '../game.type';
+import type { LeaderboardEntry } from '@/game/game.type';
 
 import { updateLeaderboard } from './update-leaderboard';
 

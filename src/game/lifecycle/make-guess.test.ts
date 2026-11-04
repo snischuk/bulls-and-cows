@@ -4,13 +4,13 @@ import {
   GAME_STATUS,
   GUESS_REJECTION_REASON,
   GUESS_SUBMISSION_STATUS,
-} from '../game.config';
+} from '@/game/game.config';
 import type {
   GameSettings,
   GameState,
   GuessAttempt,
   MakeGuessResult,
-} from '../game.type';
+} from '@/game/game.type';
 
 import { makeGuess } from './make-guess';
 

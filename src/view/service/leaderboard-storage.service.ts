@@ -1,7 +1,7 @@
-import type { LeaderboardEntry } from '../../game/game.type';
-import { updateLeaderboard } from '../../game/leaderboard/update-leaderboard';
-import { isValidGameSettings } from '../../game/validation/is-valid-game-settings';
-import { readStorage, writeStorage } from '../infrastructure/local-storage';
+import type { LeaderboardEntry } from '@/game/game.type';
+import { updateLeaderboard } from '@/game/leaderboard/update-leaderboard';
+import { isValidGameSettings } from '@/game/validation/is-valid-game-settings';
+import { readStorage, writeStorage } from '@/view/infrastructure/local-storage';
 
 const LEADERBOARD_KEY: string = 'bulls-and-cows.leaderboard';
 

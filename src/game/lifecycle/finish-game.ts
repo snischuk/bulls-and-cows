@@ -1,5 +1,5 @@
-import { GAME_STATUS } from '../game.config';
-import type { GameResult, GameState } from '../game.type';
+import { GAME_STATUS } from '@/game/game.config';
+import type { GameResult, GameState } from '@/game/game.type';
 
 type FinishGame = (gameState: GameState, finishedAt: number) => GameResult;
 

@@ -1,8 +1,11 @@
-import type { GuessAttempt } from '../../../game/game.type';
-import { DEFAULT_LANGUAGE, type Language } from '../../config/interface.config';
-import { type Translate, createTranslator } from '../../i18n/translator';
-import { createList } from '../ui-kit/list';
-import { createListItem } from '../ui-kit/list-item';
+import type { GuessAttempt } from '@/game/game.type';
+import {
+  DEFAULT_LANGUAGE,
+  type Language,
+} from '@/view/config/interface.config';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import { createList } from '@/view/ui/ui-kit/list';
+import { createListItem } from '@/view/ui/ui-kit/list-item';
 
 interface AttemptsHistoryOptions extends Readonly<Partial<HTMLOListElement>> {
   readonly language?: Language;

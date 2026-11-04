@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import type { Theme } from '../config/interface.config';
+import type { Theme } from '@/view/config/interface.config';
 
 import { themeService } from './theme-storage.service';
 

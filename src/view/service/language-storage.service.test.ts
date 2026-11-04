@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import { type Language } from '../config/interface.config';
+import { type Language } from '@/view/config/interface.config';
 
 import { languageService } from './language-storage.service';
 

@@ -1,10 +1,13 @@
-import { GAME_CONFIG, NUMBER_BASE_LABELS } from '../../../game/game.config';
-import type { LeaderboardEntry } from '../../../game/game.type';
-import { DEFAULT_LANGUAGE, type Language } from '../../config/interface.config';
-import { type Translate, createTranslator } from '../../i18n/translator';
-import { formatElapsedTime } from '../../utils/format-elapsed-time';
-import { createList } from '../ui-kit/list';
-import { createListItem } from '../ui-kit/list-item';
+import { GAME_CONFIG, NUMBER_BASE_LABELS } from '@/game/game.config';
+import type { LeaderboardEntry } from '@/game/game.type';
+import {
+  DEFAULT_LANGUAGE,
+  type Language,
+} from '@/view/config/interface.config';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import { createList } from '@/view/ui/ui-kit/list';
+import { createListItem } from '@/view/ui/ui-kit/list-item';
+import { formatElapsedTime } from '@/view/utils/format-elapsed-time';
 
 interface LeaderboardOptions extends Readonly<Partial<HTMLElement>> {
   readonly language?: Language;

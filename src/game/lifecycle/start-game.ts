@@ -1,7 +1,7 @@
-import { generateSecret } from '../core/generate-secret';
-import { GAME_STATUS } from '../game.config';
-import type { GameSettings, GameState, RandomSource } from '../game.type';
-import { isValidGameSettings } from '../validation/is-valid-game-settings';
+import { generateSecret } from '@/game/core/generate-secret';
+import { GAME_STATUS } from '@/game/game.config';
+import type { GameSettings, GameState, RandomSource } from '@/game/game.type';
+import { isValidGameSettings } from '@/game/validation/is-valid-game-settings';
 
 type StartGame = (
   gameSettings: GameSettings,

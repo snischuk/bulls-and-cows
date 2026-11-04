@@ -1,8 +1,8 @@
-import { MILLISECONDS_PER_SECOND } from '../../game/game.config';
+import { MILLISECONDS_PER_SECOND } from '@/game/game.config';
 import {
   DEFAULT_LANGUAGE,
   TIME_FRACTION_DIGITS,
-} from '../config/interface.config';
+} from '@/view/config/interface.config';
 
 type FormatElapsedTime = (elapsedTime: number, locale?: string) => string;
 

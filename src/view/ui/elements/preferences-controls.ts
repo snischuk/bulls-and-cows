@@ -1,13 +1,13 @@
-import { type Language } from '../../config/interface.config';
+import { type Language } from '@/view/config/interface.config';
 import {
   LANGUAGE,
   LANGUAGE_LABELS,
   THEME,
   type Theme,
-} from '../../config/interface.config';
-import { type Translate, createTranslator } from '../../i18n/translator';
-import { createOption } from '../ui-kit/option';
-import { createSelect } from '../ui-kit/select';
+} from '@/view/config/interface.config';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import { createOption } from '@/view/ui/ui-kit/option';
+import { createSelect } from '@/view/ui/ui-kit/select';
 
 interface Preferences {
   readonly language: Language;

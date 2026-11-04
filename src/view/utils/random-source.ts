@@ -1,4 +1,4 @@
-import type { RandomSource } from '../../game/game.type';
+import type { RandomSource } from '@/game/game.type';
 
 const UINT32_RANGE: number = 2 ** 32;
 

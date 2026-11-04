@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
 
-import { GAME_STATUS } from '../game.config';
+import { GAME_STATUS } from '@/game/game.config';
 import type {
   GameSettings,
   GameState,
   NumberBase,
   RandomSource,
-} from '../game.type';
+} from '@/game/game.type';
 
 import { startGame } from './start-game';
 

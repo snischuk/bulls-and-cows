@@ -1,4 +1,4 @@
-import type { LeaderboardEntry } from '../game.type';
+import type { LeaderboardEntry } from '@/game/game.type';
 
 export interface LeaderboardRepository {
   load(): Promise<LeaderboardEntry[]>;

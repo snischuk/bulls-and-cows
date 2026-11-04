@@ -1,10 +1,13 @@
-import { NUMBER_BASE_LABELS } from '../../game/game.config';
-import type { GameSettings, GuessAttempt } from '../../game/game.type';
-import { DEFAULT_LANGUAGE, type Language } from '../config/interface.config';
-import { type Translate, createTranslator } from '../i18n/translator';
-import { createAttemptsHistory } from '../ui/elements/attempts-history';
-import { createGuessForm } from '../ui/elements/guess-form';
-import { createButton } from '../ui/ui-kit/button';
+import { NUMBER_BASE_LABELS } from '@/game/game.config';
+import type { GameSettings, GuessAttempt } from '@/game/game.type';
+import {
+  DEFAULT_LANGUAGE,
+  type Language,
+} from '@/view/config/interface.config';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import { createAttemptsHistory } from '@/view/ui/elements/attempts-history';
+import { createGuessForm } from '@/view/ui/elements/guess-form';
+import { createButton } from '@/view/ui/ui-kit/button';
 
 interface GamePageOptions extends Readonly<Partial<HTMLElement>> {
   readonly language?: Language;

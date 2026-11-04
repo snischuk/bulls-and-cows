@@ -1,4 +1,4 @@
-import type { GuessFeedback } from '../game.type';
+import type { GuessFeedback } from '@/game/game.type';
 
 type EvaluateGuess = (secret: string, guess: string) => GuessFeedback;
 

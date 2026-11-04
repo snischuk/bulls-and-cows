@@ -1,5 +1,5 @@
-import { GAME_CONFIG } from '../game.config';
-import type { LeaderboardEntry } from '../game.type';
+import { GAME_CONFIG } from '@/game/game.config';
+import type { LeaderboardEntry } from '@/game/game.type';
 
 type UpdateLeaderboard = (
   entries: readonly LeaderboardEntry[],

@@ -1,10 +1,10 @@
-import { LANGUAGE, THEME } from '../config/interface.config';
-import { type Translate, createTranslator } from '../i18n/translator';
-import type { PageAction } from '../pages/page.type';
-import { languageService } from '../service/language-storage.service';
-import { themeService } from '../service/theme-storage.service';
-import type { AppState } from '../state/app-state';
-import { createPreferencesControls } from '../ui/elements/preferences-controls';
+import { LANGUAGE, THEME } from '@/view/config/interface.config';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import type { PageAction } from '@/view/pages/page.type';
+import { languageService } from '@/view/service/language-storage.service';
+import { themeService } from '@/view/service/theme-storage.service';
+import type { AppState } from '@/view/state/app-state';
+import { createPreferencesControls } from '@/view/ui/elements/preferences-controls';
 
 type CreatePreferencesController = (
   state: AppState,

@@ -1,15 +1,18 @@
-import { countPossibleSecrets } from '../../game/core/count-possible-secrets';
+import { countPossibleSecrets } from '@/game/core/count-possible-secrets';
 import {
   GAME_CONFIG,
   NUMBER_BASE,
   NUMBER_BASE_LABELS,
-} from '../../game/game.config';
-import type { GameSettings, NumberBase } from '../../game/game.type';
-import { DEFAULT_LANGUAGE, type Language } from '../config/interface.config';
-import { type Translate, createTranslator } from '../i18n/translator';
-import { createButton } from '../ui/ui-kit/button';
-import { createOption } from '../ui/ui-kit/option';
-import { createSelect } from '../ui/ui-kit/select';
+} from '@/game/game.config';
+import type { GameSettings, NumberBase } from '@/game/game.type';
+import {
+  DEFAULT_LANGUAGE,
+  type Language,
+} from '@/view/config/interface.config';
+import { type Translate, createTranslator } from '@/view/i18n/translator';
+import { createButton } from '@/view/ui/ui-kit/button';
+import { createOption } from '@/view/ui/ui-kit/option';
+import { createSelect } from '@/view/ui/ui-kit/select';
 
 interface SettingsPageOptions extends Readonly<Partial<HTMLElement>> {
   readonly language?: Language;

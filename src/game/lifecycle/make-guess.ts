@@ -1,16 +1,16 @@
-import { evaluateGuess } from '../core/evaluate-guess';
-import { isValidGuess } from '../core/is-valid-guess';
+import { evaluateGuess } from '@/game/core/evaluate-guess';
+import { isValidGuess } from '@/game/core/is-valid-guess';
 import {
   GAME_STATUS,
   GUESS_REJECTION_REASON,
   GUESS_SUBMISSION_STATUS,
-} from '../game.config';
+} from '@/game/game.config';
 import type {
   GameState,
   GuessAttempt,
   GuessFeedback,
   MakeGuessResult,
-} from '../game.type';
+} from '@/game/game.type';
 
 type MakeGuess = (
   gameState: GameState,

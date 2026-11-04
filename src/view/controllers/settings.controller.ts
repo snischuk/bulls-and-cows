@@ -1,8 +1,8 @@
-import { startGame } from '../../game/lifecycle/start-game';
-import type { AppPage, PageAction } from '../pages/page.type';
-import { createSettingsPage } from '../pages/settings.page';
-import type { AppState } from '../state/app-state';
-import { randomSource } from '../utils/random-source';
+import { startGame } from '@/game/lifecycle/start-game';
+import type { AppPage, PageAction } from '@/view/pages/page.type';
+import { createSettingsPage } from '@/view/pages/settings.page';
+import type { AppState } from '@/view/state/app-state';
+import { randomSource } from '@/view/utils/random-source';
 
 type CreateSettingsController = (
   state: AppState,

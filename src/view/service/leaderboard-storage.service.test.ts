@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import type { LeaderboardEntry } from '../../game/game.type';
+import type { LeaderboardEntry } from '@/game/game.type';
 
 import { leaderboardService } from './leaderboard-storage.service';
 

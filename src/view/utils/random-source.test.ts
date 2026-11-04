@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import type { RandomSource } from '../../game/game.type';
+import type { RandomSource } from '@/game/game.type';
 
 import { createRandomSource } from './random-source';
 

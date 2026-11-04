@@ -2,8 +2,8 @@ import {
   DEFAULT_LANGUAGE,
   LANGUAGE,
   type Language,
-} from '../config/interface.config';
-import { readStorage, writeStorage } from '../infrastructure/local-storage';
+} from '@/view/config/interface.config';
+import { readStorage, writeStorage } from '@/view/infrastructure/local-storage';
 
 interface LanguageService {
   readonly load: () => Language;

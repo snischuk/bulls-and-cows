@@ -1,4 +1,4 @@
-import { GAME_CONFIG } from '../game.config';
+import { GAME_CONFIG } from '@/game/game.config';
 
 const DIGIT_ALPHABET: string = '0123456789abcdef';
 

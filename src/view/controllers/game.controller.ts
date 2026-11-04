@@ -2,24 +2,21 @@ import {
   GAME_STATUS,
   GUESS_REJECTION_REASON,
   GUESS_SUBMISSION_STATUS,
-} from '../../game/game.config';
-import type {
-  GuessRejectionReason,
-  MakeGuessResult,
-} from '../../game/game.type';
-import { updateLeaderboard } from '../../game/leaderboard/update-leaderboard';
-import { finishGame } from '../../game/lifecycle/finish-game';
-import { makeGuess } from '../../game/lifecycle/make-guess';
+} from '@/game/game.config';
+import type { GuessRejectionReason, MakeGuessResult } from '@/game/game.type';
+import { updateLeaderboard } from '@/game/leaderboard/update-leaderboard';
+import { finishGame } from '@/game/lifecycle/finish-game';
+import { makeGuess } from '@/game/lifecycle/make-guess';
 import {
   type MessageKey,
   type Translate,
   createTranslator,
-} from '../i18n/translator';
-import { createGamePage } from '../pages/game.page';
-import type { AppPage, PageAction } from '../pages/page.type';
-import { leaderboardService } from '../service/leaderboard-storage.service';
-import type { AppState } from '../state/app-state';
-import { formatElapsedTime } from '../utils/format-elapsed-time';
+} from '@/view/i18n/translator';
+import { createGamePage } from '@/view/pages/game.page';
+import type { AppPage, PageAction } from '@/view/pages/page.type';
+import { leaderboardService } from '@/view/service/leaderboard-storage.service';
+import type { AppState } from '@/view/state/app-state';
+import { formatElapsedTime } from '@/view/utils/format-elapsed-time';
 
 type CreateGameController = (state: AppState, renderApp: PageAction) => AppPage;
 
