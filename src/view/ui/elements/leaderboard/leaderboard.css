@@ -1,0 +1,25 @@
+.leaderboard {
+  width: 100%;
+}
+
+.leaderboard h2 {
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.leaderboard-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+  padding-left: 24px;
+}
+
+.leaderboard-item {
+  padding: 8px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+
+.leaderboard .settings-hint {
+  margin-top: 16px;
+}

@@ -9,7 +9,7 @@ import { finishGame } from '@/game/lifecycle/finish-game';
 import { makeGuess } from '@/game/lifecycle/make-guess';
 import type { MessageKey, Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
-import { createGamePage } from '@/view/pages/game.page';
+import { createGamePage } from '@/view/pages/game/game.page';
 import type { AppPage, PageAction } from '@/view/pages/page.type';
 import { leaderboardService } from '@/view/service/leaderboard-storage.service';
 import type { AppState } from '@/view/state/app-state';

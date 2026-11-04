@@ -1,0 +1,4 @@
+.ui-option {
+  background: var(--field-background);
+  color: var(--text);
+}

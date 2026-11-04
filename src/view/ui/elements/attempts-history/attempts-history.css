@@ -1,0 +1,14 @@
+.attempts-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+  padding-left: 24px;
+}
+
+.attempt-item {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--item-background);
+  color: var(--item-text);
+  font-variant-numeric: tabular-nums;
+}

@@ -7,8 +7,10 @@ import {
 } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
-import { createOption } from '@/view/ui/ui-kit/option';
-import { createSelect } from '@/view/ui/ui-kit/select';
+import { createOption } from '@/view/ui/ui-kit/option/option';
+import { createSelect } from '@/view/ui/ui-kit/select/select';
+
+import './preferences-controls.css';
 
 interface Preferences {
   readonly language: Language;

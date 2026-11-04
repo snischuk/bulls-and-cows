@@ -1,0 +1,18 @@
+.preferences-controls {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.preferences-status {
+  flex-basis: 100%;
+  text-align: right;
+}
+
+.preferences-controls .ui-select {
+  padding: 8px 12px;
+  border-radius: 8px;
+}

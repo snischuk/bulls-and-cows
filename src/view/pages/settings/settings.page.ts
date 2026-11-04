@@ -9,9 +9,12 @@ import type { Language } from '@/view/config/interface.config';
 import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
-import { createButton } from '@/view/ui/ui-kit/button';
-import { createOption } from '@/view/ui/ui-kit/option';
-import { createSelect } from '@/view/ui/ui-kit/select';
+import '@/view/styles/page.css';
+import { createButton } from '@/view/ui/ui-kit/button/button';
+import { createOption } from '@/view/ui/ui-kit/option/option';
+import { createSelect } from '@/view/ui/ui-kit/select/select';
+
+import './settings.page.css';
 
 interface SettingsPageOptions extends Readonly<Partial<HTMLElement>> {
   readonly language?: Language;

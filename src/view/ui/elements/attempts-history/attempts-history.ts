@@ -3,8 +3,10 @@ import type { Language } from '@/view/config/interface.config';
 import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
-import { createList } from '@/view/ui/ui-kit/list';
-import { createListItem } from '@/view/ui/ui-kit/list-item';
+import { createListItem } from '@/view/ui/ui-kit/list-item/list-item';
+import { createList } from '@/view/ui/ui-kit/list/list';
+
+import './attempts-history.css';
 
 interface AttemptsHistoryOptions extends Readonly<Partial<HTMLOListElement>> {
   readonly language?: Language;

@@ -4,9 +4,12 @@ import type { Language } from '@/view/config/interface.config';
 import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
-import { createAttemptsHistory } from '@/view/ui/elements/attempts-history';
-import { createGuessForm } from '@/view/ui/elements/guess-form';
-import { createButton } from '@/view/ui/ui-kit/button';
+import '@/view/styles/page.css';
+import { createAttemptsHistory } from '@/view/ui/elements/attempts-history/attempts-history';
+import { createGuessForm } from '@/view/ui/elements/guess-form/guess-form';
+import { createButton } from '@/view/ui/ui-kit/button/button';
+
+import './game.page.css';
 
 interface GamePageOptions extends Readonly<Partial<HTMLElement>> {
   readonly language?: Language;

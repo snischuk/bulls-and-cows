@@ -1,3 +1,5 @@
+import './button.css';
+
 interface ButtonOptions extends Readonly<Partial<HTMLButtonElement>> {
   readonly text?: string;
 }
@@ -16,6 +18,8 @@ export const createButton: CreateButton = (
   if (text !== undefined) {
     button.textContent = text;
   }
+
+  button.classList.add('ui-button');
 
   return button;
 };

@@ -5,7 +5,7 @@ import type { PageAction } from '@/view/pages/page.type';
 import { languageService } from '@/view/service/language-storage.service';
 import { themeService } from '@/view/service/theme-storage.service';
 import type { AppState } from '@/view/state/app-state';
-import { createPreferencesControls } from '@/view/ui/elements/preferences-controls';
+import { createPreferencesControls } from '@/view/ui/elements/preferences-controls/preferences-controls';
 
 type CreatePreferencesController = (
   state: AppState,

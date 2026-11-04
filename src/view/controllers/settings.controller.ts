@@ -1,6 +1,6 @@
 import { startGame } from '@/game/lifecycle/start-game';
 import type { AppPage, PageAction } from '@/view/pages/page.type';
-import { createSettingsPage } from '@/view/pages/settings.page';
+import { createSettingsPage } from '@/view/pages/settings/settings.page';
 import type { AppState } from '@/view/state/app-state';
 import { randomSource } from '@/view/utils/random-source';
 

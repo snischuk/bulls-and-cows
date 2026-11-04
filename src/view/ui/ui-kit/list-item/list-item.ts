@@ -1,3 +1,5 @@
+import './list-item.css';
+
 interface ListItemOptions extends Readonly<Partial<HTMLLIElement>> {
   readonly text?: string;
 }
@@ -16,6 +18,8 @@ export const createListItem: CreateListItem = (
   if (text !== undefined) {
     item.textContent = text;
   }
+
+  item.classList.add('ui-list-item');
 
   return item;
 };

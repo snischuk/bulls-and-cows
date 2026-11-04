@@ -1,0 +1,52 @@
+.game {
+  display: grid;
+  min-height: calc(100vh - 64px);
+  place-items: center;
+}
+
+.game-card {
+  width: min(100%, 480px);
+  padding: 32px;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 0 24px 60px var(--shadow);
+}
+
+.game h1 {
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  letter-spacing: -0.04em;
+}
+
+.settings-description {
+  margin-top: 8px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.status-message {
+  min-height: 48px;
+  margin-top: 24px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--status-background);
+  color: var(--status-text);
+  line-height: 1.4;
+}
+
+.game h2 {
+  margin-top: 28px;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 420px) {
+  .game-card {
+    padding: 24px 20px;
+  }
+}
+
+.settings-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

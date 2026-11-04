@@ -6,8 +6,10 @@ import type { Language } from '@/view/config/interface.config';
 import { DEFAULT_LANGUAGE } from '@/view/config/interface.config';
 import type { Translate } from '@/view/i18n/translator';
 import { createTranslator } from '@/view/i18n/translator';
-import { createButton } from '@/view/ui/ui-kit/button';
-import { createTextInput } from '@/view/ui/ui-kit/text-input';
+import { createButton } from '@/view/ui/ui-kit/button/button';
+import { createTextInput } from '@/view/ui/ui-kit/text-input/text-input';
+
+import './guess-form.css';
 
 interface GuessFormOptions extends Readonly<Partial<HTMLFormElement>> {
   readonly language?: Language;

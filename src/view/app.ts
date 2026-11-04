@@ -6,7 +6,7 @@ import { createTranslator } from '@/view/i18n/translator';
 import type { AppPage, PageAction } from '@/view/pages/page.type';
 import type { AppState } from '@/view/state/app-state';
 import { createAppState } from '@/view/state/app-state';
-import { createLeaderboard } from '@/view/ui/elements/leaderboard';
+import { createLeaderboard } from '@/view/ui/elements/leaderboard/leaderboard';
 
 type InitApp = (root: HTMLElement) => void;
 
