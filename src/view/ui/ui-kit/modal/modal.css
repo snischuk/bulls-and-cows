@@ -1,0 +1,32 @@
+.ui-modal {
+  width: min(440px, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 24px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+}
+
+.ui-modal::backdrop {
+  background: rgb(0 0 0 / 45%);
+}
+
+.ui-modal-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ui-modal-actions > button {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding-inline: 8px;
+  overflow-wrap: anywhere;
+}
